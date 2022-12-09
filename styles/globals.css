@@ -1,26 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Martel:wght@200;300;400;600;700;800;900&family=Metrophobic&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Marcellus', serif;
+  font-family: 'Martel', serif;
+  font-family: 'Metrophobic', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer base {
+  :root {
+    --color-primary: #004441;
+    --color-secondary: #07484A;
+    --text-gold: #D9B9A9;
+    --text-black: #121212;
+    --text-red: #FF0000;
   }
-  body {
-    color: white;
-    background: black;
+
+  h1 {
+    @apply text-6xl font-medium uppercase text-white tracking-[-0.5px] leading-[64px]
   }
+
+  
+  h2 {
+    @apply leading-[64px] font-normal text-[51px] tracking-[0.5px] text-textBlack
+  }
+
+
+  h3 {
+    @apply leading-[58px] font-normal text-[46px] tracking-[0.5px] text-secondary
+  }
+}
+
+@layer components {
+  .transitions {
+    @apply duration-300 ease-out
+  }
+}
+
+
+h2 {
+  font-family: 'Marcellus', sans-serif;
 }
