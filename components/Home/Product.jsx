@@ -5,7 +5,7 @@ const Product = ({ src, text, rounded = true, width = 283, height = 412, imageHe
   return (
     <div style={{ width, height }} className="p-2">
         <div style={{ borderRadius: rounded ? '8px' : 0, height: imageHeight || undefined}} className="w-full overflow-hidden relative">
-            <Link href='/product'><Image src={src} alt={text} className='!w-full !h-full' /></Link>
+            <Link href='/product'><Image src={src} alt={text} width={width} className='!w-full !h-full' /></Link>
             <button className="absolute top-6 right-4 text-2xl bg-black/5 p-1 text-white rounded-full">
               <AiOutlineHeart />
             </button>
