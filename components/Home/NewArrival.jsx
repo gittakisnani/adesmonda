@@ -18,8 +18,8 @@ import { Navigation } from "swiper";
 const NewArrivalSliderEntity = ({ src, text}) => {
     return (
         <div className='flex gap-4 h-[183px] my-6'>
-            <div className='image w-[241px] overflow-hidden'>
-                <Image src={src} alt={text} />
+            <div className='image min-w-[241px] overflow-hidden'>
+                <Image src={src} alt={text} className='h-full bg-cover' />
             </div>
             <div
             style={{ background: 'rgba(0, 68, 65, 0.02)'}}

@@ -2,8 +2,19 @@ import Image from 'next/image'
 import React from 'react'
 import Container from '../components/Container'
 import Meta from '../components/Meta'
+import PaymentInstruction from '../components/Payment/PaymentInstructions'
 import Bank from '../public/assets/images/Bank.svg'
 import CopyBank from '../public/assets/images/CopyBank.svg'
+
+const INSTRUCTIONS = ['Open BSI Mobile application', 'Choose payment Menu', 'Choose E-Commerce menu', 'Choose merchant "DOKU', 'Choose account number']
+
+const instructions = {
+    'BSI Mobile': INSTRUCTIONS,
+    'ATM BSI': INSTRUCTIONS,
+    'Banking Syariah Net': INSTRUCTIONS,
+    'Kantor BSI': INSTRUCTIONS
+}
+
 const PaymentProcessPage = () => {
   return (
     <>
@@ -42,26 +53,9 @@ const PaymentProcessPage = () => {
                     </div>
                     <div style={{ backgroundColor: 'rgba(0, 68, 65, 0.02)'}} className='rounded-xl p-2 pr-4 flex flex-col gap-4'>
                         <h6 className='font-bold leading-5'>Payment Instruction</h6>
-                        <div className='bg-white mx-2 p-2 flex flex-col gap-2 rounded-lg'>
-                            <div className='flex justify-between items-center'>
-                                <p className='text-sm tracking-[2px]'>BSI Mobile</p>
-                            </div>
-                        </div>
-                        <div className='bg-white mx-2 p-2 flex flex-col gap-2 rounded-lg'>
-                            <div className='flex justify-between items-center'>
-                                <p className='text-sm tracking-[2px]'>BSI Mobile</p>
-                            </div>
-                        </div>
-                        <div className='bg-white mx-2 p-2 flex flex-col gap-2 rounded-lg'>
-                            <div className='flex justify-between items-center'>
-                                <p className='text-sm tracking-[2px]'>BSI Mobile</p>
-                            </div>
-                        </div>
-                        <div className='bg-white mx-2 p-2 flex flex-col gap-2 rounded-lg'>
-                            <div className='flex justify-between items-center'>
-                                <p className='text-sm tracking-[2px]'>BSI Mobile</p>
-                            </div>
-                        </div>
+                        {Object.keys(instructions).map((instruction, index) => (
+                            <PaymentInstruction key={index} text={instruction} instructions={instructions[instruction]} />
+                        ))}
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">

@@ -14,7 +14,7 @@ import GridPicture from '../public/assets/images/GridPicture.svg'
 import GridPicture2 from '../public/assets/images/GridPicture2.svg'
 import GridPicture3 from '../public/assets/images/GridPicture3.svg'
 import GridPicture4 from '../public/assets/images/GridPicture4.svg'
-
+import OrderModal from '../components/OrderModal'
 export default function Home() {
   return (
     <>

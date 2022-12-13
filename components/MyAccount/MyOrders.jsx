@@ -19,9 +19,9 @@ const MyOrders = () => {
             ))}
         </div>
         <MyOrder />
-        <MyOrder />
-        <MyOrder />
-        <MyOrder />
+        <MyOrder status='Delivery' />
+        <MyOrder status='Completed' />
+        <MyOrder status='Expired' />
     </div>
   )
 }
