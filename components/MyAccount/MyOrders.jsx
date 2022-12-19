@@ -1,11 +1,16 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect } from 'react'
 import MyOrder from './myOrder'
 
 const MyOrders = () => {
     const router = useRouter()
 
+    useEffect(() => {
+        if(!router.query.type) {
+            router.push(`${router.asPath}&type=all`)
+        }
+    }, [router])
   return (
     <div className='flex flex-col gap-4 w-full'>
         <input className='border p-2 rounded-md w-full' type="text" />

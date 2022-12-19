@@ -9,7 +9,7 @@ const OurProducts = () => {
     <h2 
     style={{ fontFamily: 'Marcellus '}}
     className='mb-5 text-center'>Our Products</h2>
-    <Container className='grid grid-cols-3 lg:grid-cols-4 gap-6'>
+    <Container className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
         <Product src={ProductImage} text='Product' />
         <Product src={ProductImage} text='Product' />
         <Product src={ProductImage} text='Product' />

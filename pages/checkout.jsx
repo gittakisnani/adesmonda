@@ -6,11 +6,17 @@ import Meta from "../components/Meta"
 import OrderItem from "../components/MyAccount/OrderItem"
 import OrderSummary from "../components/OrderSummary"
 import ProductPicture2 from '../public/assets/images/ProductPicture2.svg'
-
+import OrderModal from '../components/OrderModal'
+import { useRouter } from "next/router"
 const Checkout = () => {
+    const router = useRouter()
+    const [request, setRequest] = useState(false);
+    const handleRequest = () => router.push('/myaccount?tab=my-orders&type=all')
+
   return (
     <>
         <Meta title='Checkout' />
+        {request && <OrderModal handleRequest={handleRequest} />}
         <section className="my-20">
             <h2 className="text-center mb-10">Checkout</h2>
             <Container className='grid grid-cols-2 gap-32'>
@@ -42,7 +48,7 @@ const Checkout = () => {
                 </div>
                 <div className="flex flex-col gap-4">
                     <OrderSummary />
-                    <button className="w-full text-white leading-6 font-bold rounded-[16px] bg-primary py-3">Continue your payment</button>
+                    <button onClick={() => setRequest(true)} className="w-full text-white leading-6 font-bold rounded-[16px] bg-primary py-3">Continue your payment</button>
                 </div>
             </Container>
         </section>

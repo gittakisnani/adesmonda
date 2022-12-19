@@ -30,7 +30,7 @@ const Filter = ({ filters, setFilters }) => {
 
 
   return (
-    <div className='w-[272px]'>
+    <div className='min-w-[200px] lg:min-w-[272px]'>
         <h5 style={{ fontFamily: 'Marcellus'}} className='text-lg tracking-[0.25em] leading-6'>Filter</h5>
         <div style={{ background: 'rgba(0, 68, 65, 0.05)'}} className='p-2 flex flex-col gap-4 mt-2'>
             <p className='font-medium leading-4'>Category</p>

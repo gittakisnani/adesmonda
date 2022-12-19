@@ -3,10 +3,14 @@ import Link from "next/link"
 import { AiOutlineHeart } from 'react-icons/ai'
 const Product = ({ src, text, rounded = true, width = 283, height = 412, imageHeight }) => {
   return (
-    <div style={{ width, height }} className="p-2">
+    <div style={{ width, height }} className="p-2 mx-auto">
         <div style={{ borderRadius: rounded ? '8px' : 0, height: imageHeight || undefined}} className="w-full overflow-hidden relative">
-            <Link href='/product'><Image src={src} alt={text} width={width} className='!w-full !h-full' /></Link>
-            <button className="absolute top-6 right-4 text-2xl bg-black/5 p-1 text-white rounded-full">
+            <Link href='/product?tab=description'>
+              <div className="min-w-[267px] min-h-[268px]">
+                <Image src={src} alt={text} width={width} className='!w-full !h-full' />
+              </div>
+            </Link>
+            <button className="absolute top-4 right-4 text-2xl bg-black/5 p-1 text-white rounded-full">
               <AiOutlineHeart />
             </button>
         </div>

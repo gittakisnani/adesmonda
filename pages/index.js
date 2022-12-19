@@ -15,6 +15,8 @@ import GridPicture2 from '../public/assets/images/GridPicture2.svg'
 import GridPicture3 from '../public/assets/images/GridPicture3.svg'
 import GridPicture4 from '../public/assets/images/GridPicture4.svg'
 import OrderModal from '../components/OrderModal'
+import MyCart from '../components/Cart/MyCart'
+import CartMenu from '../components/Cart/CartMenu'
 export default function Home() {
   return (
     <>

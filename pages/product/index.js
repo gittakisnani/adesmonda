@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Container from '../../components/Container'
 import ProductPicture from '../../public/assets/images/ProductPicture.svg'
 import ProductPicture2 from '../../public/assets/images/ProductPicture2.svg'
@@ -11,9 +11,11 @@ import Product from '../../components/Home/Product'
 import ProductCover from '../../public/assets/images/ProductCover.svg'
 import ProductBanner from '../../public/assets/images/ProductBanner.svg'
 import Meta from '../../components/Meta'
+import Controller from '../../components/Variant/Controller'
 
 const ProductPage = () => {
     const router = useRouter()
+
   return (
     <>
         <Meta title='Product' />
@@ -43,24 +45,22 @@ const ProductPage = () => {
                         <h4 style={{ fontFamily: 'Marcellus' }} className='text-black leading-9 tracking-[2px] text-2xl uppercase'>Meja Makan Marmer 4 Kursi Rounded Simply Modern </h4>
                         <p style={{ color: 'rgba(18, 18, 18, 0.7)'}} className='leading-4 tracking-[1px] '>Dining Table</p>
                         <div className='flex items-center gap-6'>
-                            <p style={router.query.tab === 'description' ? {fontWeight: 700, borderBottom: '2px solid'} : null} className='leading-5 text-xl tracking-[1.5px] border-primary'>
+                            <p style={(router.query.tab === 'description' || !router.query.tab) ? {fontWeight: 700, borderBottom: '2px solid'} : null} className='leading-5 text-xl tracking-[1.5px] border-primary '>
                                 <Link href='?tab=description'>
                                     Description
                                 </Link>
                             </p>
-                            <p style={router.query.tab === 'specification' ? {fontWeight: 700, borderBottom: '2px solid'} : null} className='leading-5 text-xl tracking-[1.5px] border-primary'>
+                            <p style={router.query.tab === 'specification' ? {fontWeight: 700, borderBottom: '2px solid'} : null} className='leading-5 text-xl tracking-[1.5px] border-primary '>
                                 <Link href='?tab=specification'>
                                     Specification
                                 </Link>
                             </p>
                         </div>
-                        <p className='text-sm leading-5 tracking-[1px]'>Lengkapi ruang makan anda dengan meja makan yang elegan dari Cavallo Dining Table Series. Meja marmer yang luas menawarkan Anda untuk menikmati makan malam kecil ataupun besar. Pola dan warna yang sederhana untuk ruang makan anda memberikan kesan kehangatan serta suasana ceria pada ruang makan Anda.</p>
+                        {(router.query.tab === 'description' || !router.query.tab) &&  <p className='text-sm leading-5 tracking-[1px]'>Lengkapi ruang makan anda dengan meja makan yang elegan dari Cavallo Dining Table Series. Meja marmer yang luas menawarkan Anda untuk menikmati makan malam kecil ataupun besar. Pola dan warna yang sederhana untuk ruang makan anda memberikan kesan kehangatan serta suasana ceria pada ruang makan Anda.</p>}
+                        {router.query.tab === 'specification' &&  <p className='text-sm leading-5 tracking-[1px]'>Specifications data</p>}
                         <h5 style={{ fontFamily: 'Plus Jakarta Sans'}} className='text-4xl leading-10 font-bold tracking-[1.5px]'>Rp 320.000.000</h5>
                         <p className='text-xl leading-5 font-bold tracking-[1px]'>Marble Color</p>
-                        <div className='flex justify-between items-center'>
-                            <p className='leading-4'>Pallette Royal</p>
-                            <p className='underline text-primary'>Change</p>
-                        </div>
+                        <Controller />
                         <div className='flex items-center mt-4'>
                             <button className='text-sm leading-5 bg-primary w-full mx-10 py-2 rounded-lg flex items-center gap-2 justify-center tracking-[2px] text-[#FCF6F6]'>
                                 <Image src={AddToBag} alt='Add To Shopping List' />
