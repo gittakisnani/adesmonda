@@ -5,10 +5,10 @@ const OrderSummary = ({ includeSubtotal = false, onClick }) => {
     const [showOrderSummary, setShowOrderSummary] = useState(false);
 
     return (
-        <div style={{ backgroundColor: 'rgba(0, 68, 65, 0.05)', paddingTop: !includeSubtotal || showOrderSummary ? '8px': 0 }} className='w-full max-w-[768px] mx-auto rounded-2xl flex flex-col gap-4 relative'>
+        <div style={{ backgroundColor: 'rgba(0, 68, 65, 0.05)', paddingTop: !includeSubtotal || showOrderSummary ? '8px': 0 }} className='w-full max-w-[768px] mx-auto rounded-2xl flex flex-col gap-4 relative -z-1'>
             {(!includeSubtotal || showOrderSummary) &&
                 <>
-                {(showOrderSummary && includeSubtotal) && <button onClick={() => setShowOrderSummary(false)} className='absolute top-1 right-1/2 translate-x-1/2 text-xl'>
+                {(showOrderSummary && includeSubtotal) && <button onClick={() => setShowOrderSummary(false)} className='absolute top-1 right-1/2 translate-x-1/2 text-xl -z-1'>
                 <HiBars2 />
                 </button>}
                 <h4 className="font-bold text-xl leading-5 px-2">Order Summary</h4>

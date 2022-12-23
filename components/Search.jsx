@@ -15,7 +15,7 @@ const SearchForm = ({ search, setSearch }) => {
     <form onSubmit={handleSubmit} style={{ bottom: search ? '0' : '100%' }} className='transitions absolute left-0 right-0 z-2 text-textBlack text-sm h-full flex items-center bg-white gap-4 justify-between'>
         <input 
         type='text'
-        className='outline-none border-none bg-transparent flex-1'
+        className='outline-none border-none bg-transparent flex-1 px-4'
         value={searchText}
         onChange={e => setSearchText(e.target.value)}
         placeholder='Search'

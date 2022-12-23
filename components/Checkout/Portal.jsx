@@ -17,11 +17,11 @@ const Portal = ({ handlePaymentMethod, method, setMethod }) => {
             <p className='font-semibold leading-5 mt-2'>ATM/Transfer Bank (Virtual Account)</p>
         </div>
         <div style={{ background: 'rgba(0, 68, 65, 0.05)'}} className='flex flex-col gap-2 p-2'>
-            <MethodPaymentItem id='bsi' text='Bank Syariah Indonesia' src={BSI} setMethod={setMethod} checked={method.id === 'bsi'} />
-            <MethodPaymentItem id='bca' text='Bank Syariah Indonesia ' src={BCA} setMethod={setMethod} checked={method.id === 'bca'} />
-            <MethodPaymentItem id='mandiri' text='Bank Mandiri' src={Mandiri} setMethod={setMethod} checked={method.id === 'mandiri'} />
-            <MethodPaymentItem id='bri' text='Bank Rakyat Indonesia' src={BRI} setMethod={setMethod} checked={method.id === 'bri'} />
-            <MethodPaymentItem id='bni' text='Bank Negara Indonesia' src={BNI} setMethod={setMethod} checked={method.id === 'bni'} />
+            <MethodPaymentItem id='bsi' text='Bank Syariah Indonesia' src={BSI} setMethod={setMethod} checked={method?.id === 'bsi'} />
+            <MethodPaymentItem id='bca' text='Bank Syariah Indonesia ' src={BCA} setMethod={setMethod} checked={method?.id === 'bca'} />
+            <MethodPaymentItem id='mandiri' text='Bank Mandiri' src={Mandiri} setMethod={setMethod} checked={method?.id === 'mandiri'} />
+            <MethodPaymentItem id='bri' text='Bank Rakyat Indonesia' src={BRI} setMethod={setMethod} checked={method?.id === 'bri'} />
+            <MethodPaymentItem id='bni' text='Bank Negara Indonesia' src={BNI} setMethod={setMethod} checked={method?.id === 'bni'} />
         </div>
         <div style={{ background: 'rgba(0, 68, 65, 0.05)'}} className='flex mt-2 justify-between items-center p-2'>
             <p className='font-semibold leading-5'>Credit Card</p>
