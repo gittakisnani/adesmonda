@@ -22,7 +22,7 @@ const Header = () => {
   
   
     return (
-    <header className='border-b h-[60px] flex items-center'>
+    <header className='border-b h-[60px] sticky top-0 flex items-center'>
         <Container className='flex w-full gap-4 items-center relative overflow-y-hidden'>
         {navbar && <NavBar handleNavbar={handleNavbar} />}
         <button onClick={handleNavbar}>
