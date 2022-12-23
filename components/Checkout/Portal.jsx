@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { MdOutlineClose } from 'react-icons/md'
 import MethodPaymentItem from './MethodPaymentItem'
 import BSI from '../../public/assets/images/BSI.svg'
@@ -6,11 +6,10 @@ import BNI from '../../public/assets/images/BNI.svg'
 import Mandiri from '../../public/assets/images/Mandiri.svg'
 import BCA from '../../public/assets/images/BCA.svg'
 import BRI from '../../public/assets/images/BRI.svg'
-const Portal = ({ handlePaymentMethod }) => {
-    const [method, setMethod] = useState()
+const Portal = ({ handlePaymentMethod, method, setMethod }) => {
   return (
-    <div className='p-2 bg-white rounded-md absolute top-[100%] shadow-2xl w-[400px]'>
-        <div className='flex items-center gap-4'>
+    <div className='p-2 bg-white z-20 rounded-md fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 shadow-2xl w-[400px]'>
+        <div className='flex items-center gap-4 mb-2'>
             <button onClick={handlePaymentMethod} className='text-xl'><MdOutlineClose /></button>
             <h4 className='uppercase text-lg leading-7 font-bold text-center flex-1'>Method Payment</h4>
         </div>

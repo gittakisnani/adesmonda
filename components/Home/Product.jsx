@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { AiOutlineHeart } from 'react-icons/ai'
-const Product = ({ src, text, rounded = true, width = 283, height = 412, imageHeight }) => {
+const Product = ({ src, text= 'Premium Marquina Simply Modern', category = 'Dining Table', price = '30.000.000', rounded = true, width = 283, height = 412, imageHeight }) => {
   return (
     <div style={{ width, height }} className="p-2 mx-auto">
         <div style={{ borderRadius: rounded ? '8px' : 0, height: imageHeight || undefined}} className="w-full overflow-hidden relative">
@@ -16,12 +16,12 @@ const Product = ({ src, text, rounded = true, width = 283, height = 412, imageHe
         </div>
         <div className="flex flex-col items-center gap-2 text-[#121212] mt-3">
             <p style={{ fontFamily: 'Marcellus'}} className='text-sm text-center leading-4 tracking-[0.25em] uppercase'>
-            Premium Marquina Simply Modern
+            {text}
             </p>
             <p className="text-[#989C9C] text-sx leading-5 tracking-[0.5px]">
-            Dining Table
+            {category}
             </p>
-            <p className="text-sm font-bold leading-5 tracking-[0.15px]">Rp 30.000.000</p>
+            <p className="text-sm font-bold leading-5 tracking-[0.15px]">Rp {price}</p>
         </div>
     </div>
   )
