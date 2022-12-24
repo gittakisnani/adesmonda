@@ -56,9 +56,6 @@ span.p-slider-range {
   border-color: #004441 !important;
   background: #004441 !important;
 }
-img {
-  z-index: 0;
-}
 
 
 .noScrollBar::-webkit-scrollbar {

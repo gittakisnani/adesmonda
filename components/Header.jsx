@@ -22,7 +22,7 @@ const Header = () => {
   
   
     return (
-    <header className='border-b h-[60px] sticky top-0 flex items-center'>
+    <header className='border-b h-[60px] sticky top-0 z-50 flex items-center'>
         <Container className='flex w-full gap-4 items-center relative overflow-y-hidden'>
         {navbar && <NavBar handleNavbar={handleNavbar} />}
         <button onClick={handleNavbar}>
@@ -34,9 +34,13 @@ const Header = () => {
             </Link>
         </div>
         <div className='flex items-center gap-4'>
+            <button>
             <Image className='cursor-pointer' onClick={() => setSearch(true)} src={Search} alt='Search Products' width={32} height={32} />
+            </button>
             <Link href='/wishlist'><Image src={Liked} alt='Wishlist' width={32} height={32} /></Link>
+            <button>
             <Image onClick={handleShowCart} src={ShoppingList} alt='Shopping list' width={32} height={32} />
+            </button>
             {loggedIn 
             ? <Image src={User} alt='User info' width={32} height={32} />
             : <button 
